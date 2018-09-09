@@ -2,25 +2,29 @@
 
 import java.util.Random;
 
-public class HasQuarterState implements State {
+public class HasCoinState implements State {
 	GumballMachine gumballMachine;
  
-	public HasQuarterState(GumballMachine gumballMachine) {
+	public HasCoinState(GumballMachine gumballMachine) {
 		this.gumballMachine = gumballMachine;
 	}
   
-	public void insertQuarter() {
+	public void insertCoin(int coin) {
+	        if(gumballMachine.price == 25 || gumballMachine.total > 50 )
 		System.out.println("You can't insert another quarter");
 	}
  
-	public void ejectQuarter() {
+	public void ejectCoin() {
 		System.out.println("Quarter returned");
-		gumballMachine.setState(gumballMachine.getNoQuarterState());
+		gumballMachine.setState(gumballMachine.getNoCoinState());
 	}
  
 	public void turnCrank() {
 		System.out.println("You turned...");
+		if(gumballMachine.total >= 50 || gumballMachine.price == 25) 
 		gumballMachine.setState(gumballMachine.getSoldState());
+		else
+		gumballMachine.setState(gumballMachine.getNoCoinState());
 	}
 
     public void dispense() {
