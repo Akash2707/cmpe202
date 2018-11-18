@@ -12,5 +12,5 @@ taxes, all the strategy behaviour is written in the single context class using l
 
 **Comparison between Java pattern implementation and Java Lambda Implementation:**
 
-Lambda function treats functions as a method argument without belonging to any class which leads to compact and managable code by 
-reducing the number of classes.
+Lambda function treats function as a method argument without belonging to any class which leads to compact and managable code by 
+reducing the number of classes,
